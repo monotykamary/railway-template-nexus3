@@ -2,9 +2,15 @@
 
 ## About Hosting Nexus Repository
 
-Nexus Repository is a universal artifact manager for Maven, npm, NuGet, PyPI, Docker, raw files, and other package formats. This template deploys stable 3.96.4 with generated admin credentials and anonymous access disabled.
+Nexus Repository is a universal artifact manager for Maven, npm, NuGet, PyPI, Docker, raw files, and other package formats. This template deploys stable 3.97.0 with generated admin credentials and anonymous access disabled.
 
 Sign in as `admin` with `NEXUS_ADMIN_PASSWORD`, then read and explicitly accept the Community Edition EULA in the onboarding wizard. This template does not accept legal terms for you.
+
+### Required telemetry (3.97.0 and later)
+
+Since 3.97.0, every Nexus Repository installation, Community Edition included, sends [baseline telemetry](https://help.sonatype.com/en/nexus-repository-telemetry.html) to Sonatype, and an administrator must acknowledge this in the onboarding wizard. The template does not acknowledge it for you. If uploads to Sonatype keep failing for 10 days, Nexus switches to read-only until an upload succeeds; Railway allows the outbound connection, so keep egress to `nxrm.telemetry.sonatype.com` open.
+
+Upgrading an existing deployment to 3.97.0 migrates its database in one direction. Back up the `/nexus-data` volume first; going back to 3.96.x means restoring that backup.
 
 ## Common Use Cases
 
