@@ -1,4 +1,4 @@
-FROM docker.io/sonatype/nexus3:3.97.0-alpine@sha256:772ad5badde07e15f2c25c750437fcbb01ebdb84a8c43a3ed38eda60bb6448f1
+FROM docker.io/sonatype/nexus3:3.97.2-alpine@sha256:5a90cc609f47d1461282a314fbb78906a5d84c8961d515902e46e357c7278471
 USER root
 RUN apk add --no-cache su-exec
 COPY entrypoint.sh /usr/local/bin/nexus-railway-entrypoint
